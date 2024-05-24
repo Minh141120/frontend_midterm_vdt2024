@@ -1,0 +1,44 @@
+.btn-edit {
+    background-color: #ffc107; /* Bootstrap warning color */
+    color: white;
+    margin-right: 5px;
+}
+
+.btn-delete {
+    background-color: #dc3545; /* Bootstrap danger color */
+    color: white;
+}
+
+.table-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table-actions .btn {
+    flex: 1;
+    margin: 0 5px; /* Thêm khoảng cách giữa các nút */
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+.page-link {
+    color: #007bff;
+}
+
+.page-link:hover {
+    color: #0056b3;
+}
+
+.page-item.disabled .page-link {
+    color: #6c757d;
+}
