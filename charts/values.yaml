@@ -1,6 +1,6 @@
 replicaCount: 2
 image:
-  repository: minhitptit/nnm-vdt2024-frontend-app
+  repository: minhitptit/nnm-vdt2024-frontend-app-ubuntu
   tag: latest
 service:
   nodePort: 30001
