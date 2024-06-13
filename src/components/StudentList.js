@@ -5,7 +5,7 @@ import ReactPaginate from 'react-paginate';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/styles.css';
 const baseURL = "http://localhost:8080/api/student";
-
+import axiosInstance from '../axiosConfig';
 const StudentList = () => {
     const [students, setStudents] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
@@ -13,7 +13,7 @@ const StudentList = () => {
     const studentsPerPage = 10;
 
     useEffect(() => {
-        axios.get(baseURL)
+        axiosInstance.get(baseURL)
             .then(response => {
                 setStudents(response.data);
                 setPageCount(Math.ceil(response.data.length / studentsPerPage));
@@ -24,7 +24,7 @@ const StudentList = () => {
     }, []);
 
     const handleDelete = (id) => {
-        axios.delete(`${baseURL}/${id}`)
+        axiosInstance.delete(`${baseURL}/${id}`)
             .then(response => {
                 const updatedStudents = students.filter(student => student.id !== id);
                 setStudents(updatedStudents);

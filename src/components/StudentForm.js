@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import axiosInstance from "../axiosConfig"
 const baseURL = "http://localhost:8080/api/student";
 
 const StudentForm = () => {
@@ -38,7 +38,7 @@ const StudentForm = () => {
                     console.error('There was an error updating the student!', error);
                 });
         } else {
-            axios.post(`${baseURL}`, student)
+            axiosInstance.post(`${baseURL}`, student)
                 .then(response => {
                     navigate('/');
                 })
